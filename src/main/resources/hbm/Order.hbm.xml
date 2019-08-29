@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.shopping.domain">
+    <class name="Order" table="orders">
+        <id name="id" column="id">
+            <generator class="native" />
+        </id>
+        <property name="user_id" column="user_id"/>
+        <property name="orderNumber" column="orderNumber"/>
+        <property name="post" column="post"/>
+        <property name="pay" column="pay"/>
+        <property name="address" column="address"/>
+        <property name="state" column="state"/>
+        <property name="date" column="date"/>
+        <property name="totalPrice" column="totalPrice"/>
+        <!--<set name="orderItem">
+            <key column="id"/>
+            <one-to-many class="OrderItem"/>
+        </set>-->
+        <!--<many-to-one name="product_type" column="product_type"/>-->
+    </class>
+</hibernate-mapping>
