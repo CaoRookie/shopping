@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="login" extends="struts-default" namespace="/login">
+        <action name="loginAction_*" class="loginAction" method="{1}">
+            <result name="login">/WEB-INF/jsp/login/login.jsp</result>
+            <result name="register">/WEB-INF/jsp/register.jsp</result>
+            <!--<result name="userLogin">/WEB-INF/jsp/home/home.jsp</result>-->
+        </action>
+    </package>
+
+    <package name="home" extends="struts-default" namespace="/servlet/home">
+        <action name="homeAction_*" class="homeAction" method="{1}">
+            <result name="home">/WEB-INF/jsp/home/home.jsp</result>
+        </action>
+    </package>
+    <!--ajax集成-->
+    <package name="ajaxJson" extends="json-default" namespace="/">
+        <action name="*_*" class="{1}" method="{2}">
+            <result name="resultbBoolean" type="json">
+                <param name="root">result</param>
+            </result>
+            <result name="ajaxJson" type="json">
+                <param name="root">resultJson</param>
+            </result>
+            <result type="json" name="success">
+                <param name="root">resultList</param>
+            </result>
+        </action>
+    </package>
+
+    <package name="classification" namespace="/servlet/classification" extends="struts-default">
+        <action name="classificationAction_*" class="classificationAction" method="{1}">
+            <result name="classification">/WEB-INF/jsp/classification/classification.jsp</result>
+        </action>
+    </package>
+    <package name="sreach" namespace="/servlet/sreach" extends="struts-default">
+        <action name="sreachAction_*" class="sreachAction" method="{1}">
+            <result name="sreach">/WEB-INF/jsp/sreach/sreach.jsp</result>
+        </action>
+    </package>
+    <package name="shopCar" namespace="/servlet/shopCar" extends="struts-default">
+        <action name="shopCarAction_*" class="shopCarAction" method="{1}">
+            <result name="shopCar">/WEB-INF/jsp/shopcar/shopCar.jsp</result>
+        </action>
+    </package>
+    <package name="userMessage" namespace="/servlet/userMessage" extends="struts-default">
+        <action name="userMessageAction_*" class="userMessageAction" method="{1}">
+            <result name="userMessage">/WEB-INF/jsp/userInfo/userInfo.jsp</result>
+        </action>
+    </package>
+    <package name="orderAction" namespace="/buyOrder/orderAction" extends="struts-default">
+        <action name="orderAction_*" class="orderAction" method="{1}">
+            <result name="myOrder">/WEB-INF/jsp/myorder.jsp</result>
+        </action>
+    </package>
+    <package name="payment" namespace="/payment" extends="struts-default">
+        <action name="*" class="paymentAction" method="{1}">
+            <result name="payment">/WEB-INF/jsp/payment.jsp</result>
+        </action>
+    </package>
+    <package name="systemAction" namespace="/servlet/systemAction" extends="struts-default">
+        <action name="*" class="systemAction" method="{1}">
+            <result name="system">/WEB-INF/jsp/systemManage.jsp</result>
+        </action>
+    </package>
+</struts>

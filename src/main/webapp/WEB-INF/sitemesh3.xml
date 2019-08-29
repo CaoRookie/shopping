@@ -1,0 +1,10 @@
+<sitemesh>
+    <!--指明满足以下路径的页面将被装饰-->
+    <mapping path="/servlet/*" decorator="/WEB-INF/jsp/decorate/decorate.jsp"/>
+    <mapping path="/login/*" decorator="/WEB-INF/jsp/decorate/loginDecorate.jsp"/>
+    <mapping path="/payment/*" decorator="/WEB-INF/jsp/decorate/loginDecorate.jsp"/>
+    <mapping path="/buyOrder/*" decorator="/WEB-INF/jsp/decorate/loginDecorate.jsp"/>
+
+    <!--指明满足以下路径的页面将被排除,不装饰-->
+    <mapping path="/resources/*" exclue="true"/>
+</sitemesh>

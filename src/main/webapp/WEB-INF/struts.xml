@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!-- 开启开发者模式，作用，页面中报错信息会更加详细，默认false-->
+    <constant name="struts.devMode" value="false"/>
+
+    <!-- 当配置文件改动后是否重新加载，生产环境下需要设置为false-->
+    <constant name="struts.configuration.xml.reload" value="false" />
+
+    <!--将请求交个给spring处理 作用：创建action交给spring，其它的还是struts2管理-->
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <!-- 国际化设置，请求参数为utf-8编码（必选） -->
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+
+    <!--临时文件存放路径——c:/tmp-->
+    <constant name="struts.multipart.saveDir" value="/tmp"/>
+    <!-- 使struts2不对request上传请求进行封装 -->
+    <!--<bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest"
+          name="myRequestParser" class="com.dear.vpInterface.utils.RequestParseWrapper"
+          scope="default" optional="true" />
+    <constant name="struts.multipart.parser" value="myRequestParser" />-->
+
+    <!-- 指定被struts2处理的请求后缀类型，如果有多个，用逗号隔开-->
+   <!--<constant name="struts.action.extension" value="action" />-->
+    <!--<include file="configs/WEB-INF/*/*.xml" />-->
+    <include file="configs/WEB-INF/struts2-myaction.xml"/>
+</struts>

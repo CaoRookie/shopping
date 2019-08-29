@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:bean="http://www.alibaba.com/schema/stat"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.alibaba.com/schema/stat http://www.alibaba.com/schema/stat.xsd">
+
+  <!--加入配置-->
+  <!--<util:properties id="configProperties" location="/WEB-INF/config.properties"/>-->
+  <context:annotation-config />
+  <!-- 扫描base-package下的文件，并注册bean，同时激活已注册的bean，
+  就是扫描那些用@Service,@component,@Repositiry标识的那些类 -->
+  <context:component-scan base-package="com.shopping.**" >
+    <!--在主容器中（applicationContext.xml），将Controller的注解打消掉    -->
+    <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />-->
+  </context:component-scan>
+  <!--Spring3.0之后处理静态资源-->
+  <mvc:annotation-driven ignore-default-model-on-redirect="true"/>
+  <mvc:resources mapping="/resources/**" location="/resources/"/>
+  <bean id="propertyConfigurer" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer" >
+    <property name="locations">
+      <list>
+        <value>/WEB-INF/db.properties</value>
+      </list>
+    </property>
+    <property name="fileEncoding">
+      <value>UTF-8</value>
+    </property>
+  </bean>
+  <!-- 阿里 druid 数据库连接池 -->
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close" >
+    <!-- 数据库基本信息配置 -->
+    <property name = "url" value="${jdbc.url}" />
+    <property name = "username" value = "${jdbc.username}" />
+    <property name = "password" value = "${jdbc.password}" />
+    <property name = "driverClassName" value = "${jdbc.driverClassName}" />
+    <property name = "filters" value = "${filters}" />
+    <!-- 最大并发连接数 -->
+    <property name = "maxActive" value = "${maxActive}" />
+    <!-- 初始化连接数量 -->
+    <property name = "initialSize" value = "${initialSize}" />
+    <!-- 配置获取连接等待超时的时间 -->
+    <property name = "maxWait" value = "${maxWait}" />
+    <!-- 最小空闲连接数 -->
+    <property name = "minIdle" value = "${minIdle}" />
+    <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+    <property name = "timeBetweenEvictionRunsMillis" value ="${timeBetweenEvictionRunsMillis}" />
+    <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+    <property name = "minEvictableIdleTimeMillis" value ="${minEvictableIdleTimeMillis}" />
+    <property name = "validationQuery" value = "${validationQuery}" />
+    <property name = "testWhileIdle" value = "${testWhileIdle}" />
+    <property name = "testOnBorrow" value = "${testOnBorrow}" />
+    <property name = "testOnReturn" value = "${testOnReturn}" />
+    <property name = "maxOpenPreparedStatements" value ="${maxOpenPreparedStatements}" />
+    <!-- 打开 removeAbandoned 功能 -->
+    <property name = "removeAbandoned" value = "${removeAbandoned}" />
+    <!-- 1800 秒，也就是 30 分钟 -->
+    <property name = "removeAbandonedTimeout" value ="${removeAbandonedTimeout}" />
+    <!-- 是否打开 abanded 连接时输出错误日志 -->
+    <property name = "logAbandoned" value = "${logAbandoned}" />
+  </bean >
+
+  <!--配置Hibernate整合Spring-->
+  <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <!--注入连接池-->
+    <property name="dataSource" ref="dataSource"/>
+    <property name="hibernateProperties">
+      <props>
+        <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+        <prop key="hibernate.show_sql">true</prop>
+        <prop key="hibernate.hbm2ddl.auto">update</prop>
+        <prop key="hibernate.format_sql">true</prop>
+        <!--批处理条数-->
+        <prop key="hibernate.jdbc.batch_size">50</prop>
+      </props>
+    </property>
+    <!--配置Hibernate的映射文件-->
+    <property name="mappingResources">
+      <list>
+        <!--<value>/hbm/*.hbm.xml</value>-->
+        <value>hbm/Product.hbm.xml</value>
+        <value>hbm/User.hbm.xml</value>
+        <value>hbm/Car.hbm.xml</value>
+        <value>hbm/ProductType.hbm.xml</value>
+        <value>hbm/UserAddress.hbm.xml</value>
+        <value>hbm/Order.hbm.xml</value>
+        <value>hbm/News.hbm.xml</value>
+        <value>hbm/Announcement.hbm.xml</value>
+      </list>
+    </property>
+    <property name="packagesToScan">
+      <list>
+        <value>com.shopping.domain</value>
+      </list>
+    </property>
+  </bean>
+  <!--jdbc模板-->
+  <bean  id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <property name="dataSource" ref="dataSource"/>
+  </bean>
+  <bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  <!--配置事务管理_hibernate-->
+  <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  <!--配置事务管理_jdbc-->
+  <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+        p:dataSource-ref="dataSource"/>
+
+  <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    <tx:attributes>
+      <!-- all methods starting with 'get' are read-only -->
+      <tx:method name="get*" read-only="true"/>
+      <tx:method name="list*" read-only="true"/>
+      <tx:method name="query*" read-only="true"/>
+      <!-- other methods use the default transaction settings (see below) -->
+      <tx:method name="*" propagation="REQUIRED" rollback-for="RuntimeException" />
+    </tx:attributes>
+  </tx:advice>
+
+  <aop:config>
+    <aop:pointcut id="perform" expression="execution(* com.shopping.service.impl.*Impl.*(..))"/>
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="perform"/>
+  </aop:config>
+  <!--<aop:aspectj-autoproxy />
+  <aop:config>
+    <aop:pointcut id="servicePointcut" expression="execution(* com.shopping.action.*.*(..))" />
+    <aop:aspect id="aspect" ref="controllerAdvice">
+      <aop:before method="doBefore" pointcut-ref="servicePointcut" />
+      <aop:around method="doAround" pointcut-ref="servicePointcut"/>
+      <aop:after-throwing method="doThrowing" throwing="ex" pointcut-ref="servicePointcut" />
+    </aop:aspect>
+  </aop:config>-->
+
+  <!--开启事务注解-->
+  <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>
