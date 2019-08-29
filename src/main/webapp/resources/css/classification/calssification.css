@@ -1,0 +1,56 @@
+.tabs>li{
+    padding: 0 20px;
+}
+#listContent{
+    border-left: 1px solid #e6e6e6;
+}
+td>img{
+    width: 80px;
+}
+.listTitle{
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    background: red;
+    line-height: 40px;
+    padding-left: 20px;
+    color: white;
+}
+.a_checked{
+    background: white;
+    color: navy;
+}
+.myList{
+    padding-left: 30px;
+    background-color: rgba(0,0,0,.55);
+}
+
+.color-white{
+    color: white;
+}
+.nav>li>a:focus,.nav>li>a:hover {
+    background: white;
+    color: navy;
+}
+.tablesTitle{
+    background: url(../../images/common/left_line.png) 0 center no-repeat;
+    background-size: 5px 17px;
+    height: 50px;
+    padding-left: 20px;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.sreachBtn{
+    background: red;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 10px;
+    box-shadow: 4px 2px 2px #eee;
+}
+.class-sreach{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}

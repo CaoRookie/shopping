@@ -1,0 +1,55 @@
+img{
+    width: 200px;
+}
+.carLi{
+    min-width: 100px;
+    height: 50px;
+    list-style: none;
+    line-height: 50px;
+}
+#submitCar{
+    color: white;
+    margin-left: 20%;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+}
+.totalPri{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+.float-l{
+    float: left;
+}
+.float-r{
+    float: right;
+}
+.bg-r{
+    background: red;
+}
+.pNum{
+    padding: 0 20px;
+    color: #000000;
+}
+.pUnLower{
+
+}
+.pAdd{
+
+}
+.cen-div{
+    width: 15%;
+    margin: auto;
+}
+.cen-div div{
+    margin-bottom: 30px;
+}
+.delCar{
+    position: absolute;
+    top: 64%;
+    background: red;
+    left: 90%;
+    border-radius: 8px;
+    padding: 10px 15px;
+}

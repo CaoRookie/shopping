@@ -1,0 +1,21 @@
+.form-control{
+    padding: 24px 12px;
+    width: 50%;
+}
+.header{
+    background: #FFFFFF;
+}
+.content{
+    padding-top:5%;
+}
+#feedback{
+    color: red;
+    font-size: 18px;
+}
+#subFromBtn{
+    width: 50%;
+    background: red;
+    height: 50px;
+    color: #ffffff;
+    font-size: 20px;
+}

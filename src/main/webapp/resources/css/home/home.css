@@ -1,0 +1,105 @@
+.float-l{
+    float: left;
+}
+.float-r{
+    float: right;
+}
+.bg-r{
+    background: red;
+}
+.h-50{
+    height: 50px;
+}
+.w-20{
+    width: 20%;
+}
+.w-25{
+    width: 25%;
+}
+.w-50{
+    width: 50%;
+}
+.w-90{
+    width: 90%;
+}
+.h-400{
+    height: 400px;
+}
+.h-300{
+    height: 300px;
+}
+.h-100{
+    height: 100%;
+}
+#sreach-product{
+    border-radius: 15px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: black;
+}
+.module{
+
+}
+.module-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.module-title-des{
+    color: #999;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.classif-title{
+    padding: 5px 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.more{
+    padding-top: 7px;
+}
+.more b{
+    display: inline-block;
+    width: 18px;
+    height: 19px;
+    overflow: hidden;
+    background: url("../../images/common/more.png") no-repeat;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.row1{
+    margin-bottom: 15px;
+}
+table{
+    width: 100%;
+}
+.product-img img {
+    height: 300px;
+    width: 100%;
+}
+.shopcar{
+    margin-top: 6px;
+}
+.shopcar img{
+    width: 35px;
+}
+.item>a>img{
+    width: 100%;
+    height: 100%;
+}
+.announcements>ol>li{
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  /*  text-align: center;
+    text-align: -webkit-center;*/
+}
+.showAnno{
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    color: #000000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.new-content{
+    text-indent: 2em;
+    line-height: 2em;
+}

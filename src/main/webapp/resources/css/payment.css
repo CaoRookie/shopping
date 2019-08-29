@@ -1,0 +1,29 @@
+
+.header{
+    background: #FFFFFF;
+}
+.content{
+    padding-top:5%;
+}
+#subFromBtn{
+    background: red;
+    color: #ffffff;
+    list-style: none;
+    padding: 10px;
+    width: 120px;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0px 10px 6px #eee;
+}
+.item{
+    padding: 18px;
+    font-size: 25px;
+    font-weight: 400;
+}
+.c-red{
+    color: red;
+}
+.myPay{
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,162 @@
+body{
+    margin: auto;
+}
+.header{
+    overflow: auto;
+    background: red;
+    box-shadow: 5px 5px 5px #888888;
+}
+.content{
+    padding-top: 15px;
+}
+#logo{
+    position: relative;
+    width: 400px;
+    height: 60px;
+    float: left;
+    margin: 10px 0 10px 10%;
+}
+#logo b{
+    position: relative;
+    top: 25px;
+    font-size: 30px;
+    float: right;
+    font-style: oblique;
+}
+.float-r{
+    float: right;
+}
+#feedback{
+    position: relative;
+    color: black;
+    float: right;
+    top: 50px;
+    right: 10%;
+}
+#feedback img{
+    height: 20px;
+}
+.tips-wrapper{
+    background: #fff8f0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.tips-inner{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.tips-wrapper .tips-inner p{
+    vertical-align: middle;
+    color: #999;
+    font-size: 12px;
+    display: inline-block;
+}
+.icon-tips{
+    background: url("../../images/login/icon-tips.png");
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.login-wrap{
+    position: relative;
+    height: 475px;
+    margin: 10px 0 20px;
+    z-index: 5;
+}
+.login-banner{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 475px;
+    background: #e93854;
+}
+.w{
+    width: 990px;
+    margin: 0 auto;
+}
+#banner-bg{
+    position: relative;
+    z-index: 3;
+    height: 475px;
+    background: url("../../images/login/login_bg.png") 0px 0px no-repeat;
+}
+.login-box{
+    text-align: center;
+}
+.login-form{
+    position: relative;
+    z-index: 4;
+    background: #fff;
+    overflow: visible;
+    width: 346px;
+    float: right;
+    top: 10px;
+}
+.w-100{
+    width: 100%;
+}
+.form{
+    width: 306px;
+    padding: 20px;
+    margin: auto;
+}
+.name-label{
+    background: url("../../images/login/user.png") no-repeat;
+}
+.pwd-label{
+    background: url("../../images/login/pwd.png") no-repeat;
+}
+.login-btn a{
+    border: 1px solid #e85356;
+    display: block;
+    background: #e4393c;
+    height: 31px;
+    line-height: 31px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Microsoft YaHei';
+}
+.coagent{
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 50px;
+    border-top: 1px solid #f4f4f4;
+    height: auto;
+    background-color: #fcfcfc;
+}
+ol ,ul{
+    list-style: none;
+}
+.coagent li .line{
+    color: #ccc;
+    padding: 0 10px;
+}
+.coagent .regist-link{
+    color: #b61d1d;
+    font-size: 14px;
+}
+.coagent .regist-link b{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    background: url("../../images/common/more.png") 0px 0px no-repeat;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.coagent .regist-link a{
+    color: #b61d1d;
+}
+.coagent li.extra-r{
+    float: right;
+}
+.coagent li{
+    float: left;
+}

@@ -1,0 +1,113 @@
+.tabs>li{
+    padding: 0 20px;
+}
+#listContent{
+    border-left: 1px solid #e6e6e6;
+}
+td>img{
+    width: 80px;
+}
+.listTitle{
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav>li>a:focus,.nav>li>a:hover {
+    background: red;
+    color: white;
+}
+.a-focus{
+    background: red;
+    color: white;
+}
+.myList{
+    text-align: center;
+}
+.addRow{
+    height: 35px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 35px;
+    margin: 7px 5px;
+    float: left;
+    background: #e6e6e6;
+}
+.addRow>a{
+    color: black;
+    padding: 0 10px;
+}
+.tablesTitle{
+    background: url(../../resources/images/common/left_line.png) 0 center no-repeat;
+    background-size: 5px 23px;
+    height: 50px;
+    padding-left: 20px;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.custom-img-sm{
+    width: 5%;
+}
+.sm-size{
+    width: 4%;
+}
+.m-15{
+    margin: 15px;
+}
+.mtb-10{
+    margin: 10px auto;
+}
+.ml-5{
+    margin-left: 5%;
+}
+.modal-dialog{
+    width:60%;
+}
+.p-img{
+    float: left;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #eee;
+}
+.p-img img{
+    width: 60px;
+    height: 60px;
+}
+.p-info{
+    float: left;
+    width: 280px;
+    margin-left: 15px;
+    _display: inline;
+    text-align: left;
+    height: 62px;
+    overflow: hidden
+}
+.dt h4{
+    height: 24px;
+    color: #333;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.dd{
+    color: #333;
+    line-height: 20px
+}
+.dd .de-item{
+    line-height: 24px;
+    display: inline-block;
+    overflow: auto;
+    display: block;
+}
+.bo-r{
+    border-right: 1px solid #eeeeee;
+}
+.info-rcol{
+    float: left;
+    max-height: 72px;
+    overflow: hidden;
+}
+.de-item .lablex{
+    float: left;
+    /*color: #000;*/
+    width: 84px
+}
