@@ -3418,7 +3418,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', '964332498@qq.com', 'Y3lfMTIz', '18328064820', 777);
+INSERT INTO `user` VALUES (1, 'admin', '964332498@qq.com', 'Y3lfMTIz', '18328064821', 777);
 
 -- ----------------------------
 -- Table structure for user_address
